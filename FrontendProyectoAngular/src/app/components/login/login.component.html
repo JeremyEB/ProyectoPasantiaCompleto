@@ -1,0 +1,25 @@
+<app-header></app-header>
+<br>
+<div class="container-login">
+    <h1>
+      Registrarse
+    </h1>
+    <br>
+      <form method="post">
+          <div class="form-group">
+            <label>Usuario</label>
+            <input type="email" [(ngModel)]="Usuario"  name="Usuario" class="form-control" placeholder="Digitar Usuario">
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" [(ngModel)]="Password" name="Contraseña" class="form-control" placeholder="Digitar Contraseña">
+          </div>
+          <br>
+          <a>
+              <span (click)="menu()">Entrar</span>
+              <div class="liquid"></div>
+          </a>
+        </form>
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,120 @@
+<app-header2></app-header2>
+<br>
+<div class="container-form">
+  <form>
+    <div class="form-group">
+      <label>ID_EMPLEADO</label>
+      <input type="number" class="form-control" id="Nombre" placeholder="Digitar Nombre" [(ngModel)]="d_employee.ID_EMPLEADO" [ngModelOptions]="{standalone: true}" disabled="True">
+    </div>
+    <br>
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" id="Nombre" placeholder="Digitar Nombre" [(ngModel)]="d_employee.NOMBRE" [ngModelOptions]="{standalone: true}">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" id="Apellidos" placeholder="Digitar Apellido" [(ngModel)]="d_employee.APELLIDOS" [ngModelOptions]="{standalone: true}">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Ubicacion</label>
+        <select class="form-select" [(ngModel)]="d_employee.UBICACION" [ngModelOptions]="{standalone: true}">
+          <option selected>---Seleccionar Ubicacion---</option>
+          <!--Centro de Distribucion-->
+          <option value="CD01-Centro de Distribucion 1">CD01-Centro de Distribucion 1</option>
+          <option value="CD02-Centro de Distribucion 2">CD02-Centro de Distribucion 2</option>
+          <option value="CD03-Centro de Distribucion 3">CD03-Centro de Distribucion 3</option>
+          <option value="CD04-Centro de Distrubicion 4">CD04-Centro de Distrubicion 4</option>
+          <!--Electrolama-->
+          <option value="PL04-Electrolama Santiago">PL04-Electrolama Santiago</option>
+          <option value="PL12-Electrolama Independencia">PL12-Electrolama Independencia</option>
+          <option value="PL13-Electrolama Higuey">PL13-Electrolama Higuey</option>
+          <option value="PL14-Electrolama San Francisco">PL14-Electrolama San Francisco</option>
+          <option value="PL18-Electrolama la Vega">PL18-Electrolama la Vega</option>
+          <!--Feria-->
+          <option value="PL02-Feria">PL02-Feria</option>
+          <!--Liquidacion-->
+          <option value="PL05-Liquidacion">PL05-Liquidacion</option>
+          <!--Oficina Administrativas-->
+          <option value="OF01-Oficinas Administrativas">OF01-Oficinas Administrativas</option>
+          <!--Plaza Lama-->
+          <option value="PL01-Plaza Lama Duarte">PL01-Plaza Lama Duarte</option>
+          <option value="PL03-Plaza Lama Herrera">PL03-Plaza Lama Herrera</option>
+          <option value="PL08-Plaza Lama 27 de Febrero">PL08-Plaza Lama 27 de Febrero</option>
+          <option value="PL10-Plaza Lama Zona Oriental">PL10-Plaza Lama Zona Oriental</option>
+          <option value="PL11-Plaza Lama Maximo Gomez">PL11-Plaza Lama Maximo Gomez</option>
+          <option value="PL15-Plaza Lama La Romana">PL15-Plaza Lama La Romana</option>
+          <option value="PL16-Plaza Lama Santiago">PL16-Plaza Lama Santiago</option>
+          <option value="PL17-Plaza Lama San Isidro">PL17-Plaza Lama San Isidro</option>
+          <option value="PL20-Plaza Lama Bavaro">PL20-Plaza Lama Bavaro</option>
+          <!--Super Lama-->
+          <option value="PL19-Super Lama Sambil">PL19-Super Lama Sambil</option>
+          <option value="PL18-Super Lama La Vega">PL18-Super Lama La Vega</option>
+          <!--Virtual-->
+          <option value="PL09-Tienda Virtual">PL09-Tienda Virtual</option>
+          <!--Ventas al Por Mayor -->
+          <option value="PL06-Ventas al por Mayor">PL06-Ventas al por Mayor</option>
+        </select>
+      </div>
+        <br>
+        <div class="form-group">
+          <label>Puesto</label>
+          <input type="text" class="form-control" id="Puesto" placeholder="Digitar Puesto" [(ngModel)]="d_employee.PUESTO" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Numero de Telefono</label>
+          <input type="text" class="form-control" id="Telefono" placeholder="Digitar Telefono" [(ngModel)]="d_employee.NUMERO_TELEFONO" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Extension</label>
+          <input type="text" class="form-control" id="Extension" placeholder="Digitar extension" [(ngModel)]="d_employee.EXTENSION" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="clear2()">Limpiar</button>
+    </form>
+</div>
+<br>
+<div class="container-input">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" [formControl]="control" placeholder="Buscar">
+      </div>
+</div>
+<div class="container-table">
+  <h2>Lista Empleados</h2>
+  <table class="table table-hover table-bordered table-sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Puesto</th>
+        <th scope="col">Numero de Telefono</th>
+        <th scope="col">Extension</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee_list of empleados">
+        <th scope="row">{{employee_list.ID_EMPLEADO}}</th>
+        <th>{{employee_list.NOMBRE}}</th>
+        <td>{{employee_list.APELLIDOS}}</td>
+        <td>{{employee_list.UBICACION}}</td>
+        <td>{{employee_list.PUESTO}}</td>
+        <td>{{employee_list.NUMERO_TELEFONO}}</td>
+        <td>{{employee_list.EXTENSION}}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="onSetData(employee_list)">Seleccionar</button>
+          <button class="btn btn-warning" (click)="onUpdateEmployee(d_employee)">Modificar</button>
+          <button class="btn btn-danger" (click)="onDeleteEmployee(d_employee.ID_EMPLEADO)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>

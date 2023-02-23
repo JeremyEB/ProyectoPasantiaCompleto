@@ -1,0 +1,82 @@
+<app-header2></app-header2>
+<br>
+<div class="container-form">
+    <h1>
+        Agregando Empleados
+    </h1>
+    <br>
+    <form>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" class="form-control" id="Nombre" placeholder="Digitar Nombre" [(ngModel)]="c_employee.NOMBRE" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Apellidos</label>
+          <input type="text" class="form-control" id="Apellidos" placeholder="Digitar Apellido" [(ngModel)]="c_employee.APELLIDOS" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Ubicacion</label>
+          <select class="form-select" [(ngModel)]="c_employee.UBICACION" [ngModelOptions]="{standalone: true}">
+            <option selected>---Seleccionar Ubicacion---</option>
+            <!--Centro de Distribucion-->
+            <option value="CD01-Centro de Distribucion 1">CD01-Centro de Distribucion 1</option>
+            <option value="CD02-Centro de Distribucion 2">CD02-Centro de Distribucion 2</option>
+            <option value="CD03-Centro de Distribucion 3">CD03-Centro de Distribucion 3</option>
+            <option value="CD04-Centro de Distrubicion 4">CD04-Centro de Distrubicion 4</option>
+            <!--Electrolama-->
+            <option value="PL04-Electrolama Santiago">PL04-Electrolama Santiago</option>
+            <option value="PL12-Electrolama Independencia">PL12-Electrolama Independencia</option>
+            <option value="PL13-Electrolama Higuey">PL13-Electrolama Higuey</option>
+            <option value="PL14-Electrolama San Francisco">PL14-Electrolama San Francisco</option>
+            <option value="PL18-Electrolama la Vega">PL18-Electrolama la Vega</option>
+            <!--Feria-->
+            <option value="PL02-Feria">PL02-Feria</option>
+            <!--Liquidacion-->
+            <option value="PL05-Liquidacion">PL05-Liquidacion</option>
+            <!--Oficina Administrativas-->
+            <option value="OF01-Oficinas Administrativas">OF01-Oficinas Administrativas</option>
+            <!--Plaza Lama-->
+            <option value="PL01-Plaza Lama Duarte">PL01-Plaza Lama Duarte</option>
+            <option value="PL03-Plaza Lama Herrera">PL03-Plaza Lama Herrera</option>
+            <option value="PL08-Plaza Lama 27 de Febrero">PL08-Plaza Lama 27 de Febrero</option>
+            <option value="PL10-Plaza Lama Zona Oriental">PL10-Plaza Lama Zona Oriental</option>
+            <option value="PL11-Plaza Lama Maximo Gomez">PL11-Plaza Lama Maximo Gomez</option>
+            <option value="PL15-Plaza Lama La Romana">PL15-Plaza Lama La Romana</option>
+            <option value="PL16-Plaza Lama Santiago">PL16-Plaza Lama Santiago</option>
+            <option value="PL17-Plaza Lama San Isidro">PL17-Plaza Lama San Isidro</option>
+            <option value="PL20-Plaza Lama Bavaro">PL20-Plaza Lama Bavaro</option>
+            <!--Super Lama-->
+            <option value="PL19-Super Lama Sambil">PL19-Super Lama Sambil</option>
+            <option value="PL18-Super Lama La Vega">PL18-Super Lama La Vega</option>
+            <!--Virtual-->
+            <option value="PL09-Tienda Virtual">PL09-Tienda Virtual</option>
+            <!--Ventas al Por Mayor -->
+            <option value="PL06-Ventas al por Mayor">PL06-Ventas al por Mayor</option>
+          </select>
+        </div>
+          <br>
+          <div class="form-group">
+            <label>Puesto</label>
+            <input type="text" class="form-control" id="Puesto" placeholder="Digitar Puesto" [(ngModel)]="c_employee.PUESTO" [ngModelOptions]="{standalone: true}">
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Numero de Telefono</label>
+            <input type="text" class="form-control" id="Telefono" placeholder="Digitar Telefono" [(ngModel)]="c_employee.NUMERO_TELEFONO" [ngModelOptions]="{standalone: true}">
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Extension</label>
+            <input type="text" class="form-control" id="Extension" placeholder="Digitar extension" [(ngModel)]="c_employee.EXTENSION" [ngModelOptions]="{standalone: true}">
+          </div>
+          <br>
+          <i>Nota: Se requiere llenar todos los campos*</i>
+        <a>
+            <span (click)="onAddEmployee(c_employee)">Agregar</span>
+            <div class="liquid"></div>
+        </a>
+      </form>
+</div>
+<app-footer></app-footer>

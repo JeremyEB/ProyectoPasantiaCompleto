@@ -1,0 +1,18 @@
+.container-input{
+    width:30%;
+    margin:auto;
+}
+
+input{
+    border-radius:50px;
+}
+
+.container-table{
+    width:70%;
+    margin:auto;
+}
+
+.container-image{
+    width:25%;
+    margin:auto;
+}

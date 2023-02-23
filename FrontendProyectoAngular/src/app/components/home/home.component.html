@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div *ngIf="datos ==''" class="container-image">
+  <img  src="assets/images/Lost robot.gif" width="50%">
+</div>
+<br>
+<div class="container-input">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" [formControl]="control" [(ngModel)]="datos" placeholder="Buscar">
+        <!--[(ngModel)]="valueToSearch" (keyup.enter)="event()" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"-->
+        <br>
+        <!--<input type="number" [(ngModel)]="resultado">-->
+      </div>
+</div>
+<div class="container-table">
+  <h2>Buscar Empleados</h2>
+  <table class="table table-hover table-bordered table-sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Puesto</th>
+        <th scope="col">Numero de Telefono</th>
+        <th scope="col">Extension</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee_list of empleados">
+        <th scope="row">{{employee_list.ID_EMPLEADO}}</th>
+        <th>{{employee_list.NOMBRE}}</th>
+        <td>{{employee_list.APELLIDOS}}</td>
+        <td>{{employee_list.UBICACION}}</td>
+        <td>{{employee_list.PUESTO}}</td>
+        <td>{{employee_list.NUMERO_TELEFONO}}</td>
+        <td>{{employee_list.EXTENSION}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
